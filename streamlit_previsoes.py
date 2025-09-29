@@ -8,7 +8,9 @@ import plotly.graph_objects as go
 
 # ====================== CONFIG BÁSICO ======================
 st.set_page_config(page_title="Exploração & Previsões — PIB Setor (Interativo)", layout="wide")
-BASE_DIR = Path("/content/drive/MyDrive/PIB_Forecast")
+
+# 👉 Ajuste: usar diretório atual do repositório (funciona no Streamlit Cloud)
+BASE_DIR = Path(".")
 PLOTLY_TEMPLATE = "plotly_white"
 
 # ====================== CSS ======================
@@ -96,6 +98,7 @@ RES_BAYES = BASE_DIR / "results_classify_test_BAYES.csv"
 SUM_BAYES = BASE_DIR / "metrics_classify_summary_BAYES.csv"
 CM_BAYES  = BASE_DIR / "metrics_classify_confusion_matrix_BAYES.csv"
 TXT_BAYES = BASE_DIR / "classification_report_BAYES.txt"
+
 RES_FREQ  = BASE_DIR / "results_classify_test.csv"
 SUM_FREQ  = BASE_DIR / "metrics_classify_summary.csv"
 CM_FREQ   = BASE_DIR / "metrics_classify_confusion_matrix_freq.csv"
@@ -127,7 +130,7 @@ opts = []
 if df_res_bayes is not None: opts.append("Bayes (ADVI)")
 if df_res_freq  is not None: opts.append("Frequente (Logistic)")
 if not opts:
-    st.error("Nenhum resultado encontrado em /content/drive/MyDrive/PIB_Forecast.")
+    st.error("Nenhum resultado encontrado no repositório.")
     st.stop()
 src_choice = st.sidebar.radio("Modelo:", opts, index=0)
 
