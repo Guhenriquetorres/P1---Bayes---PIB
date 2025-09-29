@@ -1,1 +1,1 @@
-# P1---Bayes---PIB
+# P1 Bayes PIB
