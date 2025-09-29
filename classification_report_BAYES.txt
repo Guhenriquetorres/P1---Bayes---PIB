@@ -1,0 +1,11 @@
+                  precision    recall  f1-score   support
+
+vl_administracao       0.32      0.51      0.39     11140
+ vl_agropecuaria       0.21      0.02      0.04     11140
+    vl_industria       0.26      0.79      0.39     11140
+     vl_servicos       0.45      0.15      0.23     11140
+    vl_subsidios       0.00      0.00      0.00     11140
+
+        accuracy                           0.29     55700
+       macro avg       0.25      0.29      0.21     55700
+    weighted avg       0.25      0.29      0.21     55700
